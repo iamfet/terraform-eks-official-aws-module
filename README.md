@@ -27,11 +27,11 @@ cluster_version       = "1.27"
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/iamfet/terraform-eks-official-aws-module.git
-   cd terraform-aws-modular-ec2
+   cd terraform-eks-official-aws-module
    ```
 
 2. **Edit `terraform.tfvars`:**
-   - Update variable values as needed (VPC CIDR, subnet, key name, etc.).
+   - Update variable values as needed
 
 3. **Initialize Terraform:**
    ```sh
