@@ -9,6 +9,17 @@ This repository provides a Terraform module for deploying an Amazon EKS (Elastic
 - Integrates with AWS IAM, KMS, and other AWS services
 - Modular structure for easy customization and extension
 
+## File Structure
+
+```
+├── eks-main.tf          # Main EKS cluster and VPC configuration
+├── variables.tf         # Input variables
+├── outputs.tf          # Output values
+├── providers.tf        # Provider configuration
+├── terraform.tfvars    # Variable values
+└── README.md          # This file
+```
+
 ## Example `terraform.tfvars`
 
 ```hcl
@@ -18,8 +29,7 @@ project_name          = "my-eks-project"
 vpc_cidr_block        = "10.0.0.0/16"
 private_subnets_cidr  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 public_subnets_cidr   = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-cluster_version       = "1.27"
-## Usage
+kubernetes_version    = "1.27"
 ```
 
 ## Usage
@@ -46,6 +56,7 @@ cluster_version       = "1.27"
 5. **Apply the configuration:**
    ```sh
    terraform apply
+   ```
 
 ## Cleanup
 
@@ -69,10 +80,12 @@ See [`variables.tf`](variables.tf) for a full list of input variables and their 
 
 ## Outputs
 
-See your module outputs for details.
+- `cluster_name` - Name of the EKS cluster
+- `cluster_endpoint` - Endpoint for EKS control plane
+
+See [`outputs.tf`](outputs.tf) for complete output definitions.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
 
